@@ -1,0 +1,4 @@
+# Mandatory Context Protocol
+1. Start of Session: READ `docs/AI_SESSION_HISTORY.md`
+2. End of Session: UPDATE `docs/AI_SESSION_HISTORY.md` with session summary and next steps.
+This ensures conversation history is preserved locally in the workspace.

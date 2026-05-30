@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-light-gray text-primary font-sans;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif font-bold text-primary;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply px-4 py-2 rounded-md font-medium transition-all duration-200 ease-in-out;
+  }
+  
+  .btn-primary {
+    @apply bg-primary text-white hover:bg-primary-light;
+  }
+  
+  .btn-secondary {
+    @apply bg-secondary text-primary hover:bg-secondary-light;
+  }
+  
+  .btn-outline {
+    @apply border border-primary text-primary hover:bg-primary hover:text-white;
+  }
+  
+  .card {
+    @apply bg-white rounded-lg shadow-md overflow-hidden;
+  }
+  
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  .section {
+    @apply py-12 md:py-16;
+  }
+  
+  .section-title {
+    @apply text-2xl md:text-3xl font-bold mb-6 text-primary;
+  }
+  
+  .section-subtitle {
+    @apply text-lg text-gray-600 mb-8 max-w-3xl;
+  }
+}
+
+/* Dark mode styles */
+.dark body {
+  @apply bg-gray-900 text-white;
+}
+
+.dark .card {
+  @apply bg-gray-800 border border-gray-700;
+}
+
+.dark .section-title {
+  @apply text-white;
+}
+
+.dark .section-subtitle {
+  @apply text-gray-300;
+}
+
+/* Enhanced dark mode text styles */
+.dark .text-secondary {
+  @apply text-white font-bold drop-shadow-lg;
+}
+
+.dark .hover\:text-secondary:hover {
+  @apply text-white font-bold drop-shadow-lg;
+}
+
+/* Service card enhancements */
+.card.group.h-full {
+  @apply transition-all duration-300;
+}
+
+.card.group.h-full:hover {
+  @apply transform -translate-y-1;
+}
+
+.card.group.h-full .btn-secondary {
+  @apply font-semibold;
+}
+
+.card.group.h-full h3 {
+  @apply tracking-tight;
+}
+
+/* Form styles */
+.form-input {
+  @apply w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-secondary focus:border-transparent dark:bg-gray-800 dark:border-gray-700 dark:text-white;
+}
+
+.form-label {
+  @apply block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1;
+}
+
+.form-group {
+  @apply mb-4;
+}
+
+/* Authentication pages */
+.auth-container {
+  @apply min-h-screen flex items-center justify-center bg-gray-50 dark:bg-gray-900 py-12 px-4 sm:px-6 lg:px-8;
+}
+
+.auth-card {
+  @apply max-w-md w-full space-y-8 bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg;
+}
+
+.auth-title {
+  @apply mt-6 text-center text-3xl font-bold text-primary dark:text-white;
+}
+
+.auth-subtitle {
+  @apply mt-2 text-center text-sm text-gray-600 dark:text-gray-400;
+}
+
+/* Directory and Resource cards */
+.directory-card {
+  @apply bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl;
+}
+
+.resource-card {
+  @apply bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl;
+}
+
+/* Search Modal */
+.search-modal {
+  @apply fixed inset-0 z-50 overflow-y-auto;
+}
+
+.search-modal-overlay {
+  @apply fixed inset-0 bg-black bg-opacity-50 transition-opacity;
+}
+
+.search-modal-content {
+  @apply relative bg-white dark:bg-gray-900 w-full max-w-3xl mx-auto mt-16 rounded-lg shadow-xl;
+}
+
+.search-input {
+  @apply w-full px-4 py-3 text-lg border-0 focus:ring-0 bg-transparent text-gray-900 dark:text-white placeholder-gray-500;
+}
+
+.search-results {
+  @apply max-h-[60vh] overflow-y-auto divide-y divide-gray-200 dark:divide-gray-700;
+}
+
+.search-result-item {
+  @apply p-4 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors cursor-pointer;
+}

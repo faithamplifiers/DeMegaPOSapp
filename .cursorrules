@@ -1,0 +1,13 @@
+# AI Agent Workspace Instructions
+# Mandatory Protocol for Context Retention
+
+1. **Context Initialization**:
+   Whenever a new session begins or you are asked to continue work, you MUST first read `docs/AI_SESSION_HISTORY.md` to establish the current workspace context.
+
+2. **Context Update**:
+   At the end of your task, or before completing a major objective, you MUST update `docs/AI_SESSION_HISTORY.md`. Include:
+   - What was accomplished during your session.
+   - Any architectural decisions made.
+   - Pending tasks or next steps.
+
+This ensures that the user's project history travels WITH the codebase inside their workspace, preventing context loss when switching computers, downloading project zips, or clearing global chat history.
