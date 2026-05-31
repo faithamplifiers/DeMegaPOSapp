@@ -123,12 +123,9 @@ export async function fetchEvents() {
 
 export async function fetchDirectory() {
   const { data, error } = await supabase
-    .from('directory')
-    .select(`
-      *,
-      owner:profiles(*)
-    `)
-    .eq('status', 'active');
+    .from('directory_listings')
+    .select('*')
+    .order('name');
     
   if (error) {
     console.error('Error fetching directory:', error);
@@ -138,12 +135,17 @@ export async function fetchDirectory() {
   return data.map(listing => ({
     id: listing.id,
     name: listing.name,
+    slug: listing.slug,
     category: listing.category,
-    description: listing.description,
-    location: listing.location,
-    website: listing.website,
-    logo: listing.logo_url || 'https://images.unsplash.com/photo-1560179707-f14e90ef3623?auto=format&fit=crop&q=80',
-    verified: listing.is_verified,
+    description: listing.description || '',
+    logo: listing.logo || 'https://images.unsplash.com/photo-1560179707-f14e90ef3623?auto=format&fit=crop&q=80',
+    rating: listing.rating || 5,
+    location: listing.address || '',
+    website: listing.website || '',
+    owner: {
+      email: listing.email || '',
+      phone: listing.phone || '',
+    }
   }));
 }
 

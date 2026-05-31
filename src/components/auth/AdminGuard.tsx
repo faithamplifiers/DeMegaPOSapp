@@ -38,7 +38,7 @@ const AdminGuard: React.FC<{ children: React.ReactNode }> = ({ children }) => {
 
 
   // Redirect to home if not an admin
-  if (profile?.role !== 'admin') {
+  if (profile?.role !== 'admin' && profile?.role !== 'super_admin') {
     return <Navigate to="/" replace />;
   }
 

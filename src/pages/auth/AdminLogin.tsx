@@ -18,7 +18,7 @@ const AdminLogin: React.FC = () => {
   const [submitting, setSubmitting] = React.useState(false);
 
   // If already signed in as admin, redirect to admin dashboard
-  if (!loading && user && profile?.role === 'admin') {
+  if (!loading && user && (profile?.role === 'admin' || profile?.role === 'super_admin')) {
     return <Navigate to={from} replace />;
   }
 
@@ -42,7 +42,7 @@ const AdminLogin: React.FC = () => {
           .eq('id', data.user.id)
           .single();
 
-        if (profile?.role === 'admin') {
+        if (profile?.role === 'admin' || profile?.role === 'super_admin') {
           toast.success('Welcome, Administrator!');
           navigate(from, { replace: true });
         } else {

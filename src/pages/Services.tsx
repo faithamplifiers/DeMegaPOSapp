@@ -207,7 +207,7 @@ const Services: React.FC = () => {
                         View Details
                       </Link>
                       <Link
-                        to={`/services/${service.slug}/book`}
+                        to="/contact"
                         className="btn btn-secondary flex-1 text-center"
                       >
                         Book Now
